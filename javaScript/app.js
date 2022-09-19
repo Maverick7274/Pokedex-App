@@ -14,7 +14,7 @@ function createPokemonCard(pokemon)
     if (pokID < 10){
         pokID = `00${pokID}`;
     }
-    else if(pokID > 10 && pokID < 100){
+    else if(pokID > 9 && pokID < 100){
         pokID = `0${pokID}`;
     }
     
