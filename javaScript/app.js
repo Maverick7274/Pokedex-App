@@ -9,14 +9,20 @@ function createPokemonCard(pokemon)
 
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
+    let pokID = pokemon.id;
 
+    if (pokID < 10){
+        pokID = `00${pokID}`;
+    }
+    else if(pokID > 10 && pokID < 100){
+        pokID = `0${pokID}`;
+    }
     
     const pokeInnerHTML = `
         <div class= "sprite-container">
-            <img src="https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/00${pokemon.id}.png"></img>
+            <img src="https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${pokID}.png"></img>
         </div>
         ${name}
-        ${pokemon.id}
     `
 
     pokemonCard.innerHTML = pokeInnerHTML
